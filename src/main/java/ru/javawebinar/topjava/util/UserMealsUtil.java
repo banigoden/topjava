@@ -1,3 +1,8 @@
+/*
+https://www.baeldung.com/java-stream-reduce
+
+ */
+
 package ru.javawebinar.topjava.util;
 
 import ru.javawebinar.topjava.model.UserMeal;
@@ -5,8 +10,8 @@ import ru.javawebinar.topjava.model.UserMealWithExceed;
 
 import java.time.LocalDateTime;
 import java.time.Month;
-import java.util.List;
-import java.util.stream.Stream;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class UserMealsUtil {
 
@@ -20,6 +25,9 @@ public class UserMealsUtil {
         getFilteredMilsWithExceed(mealStream);
 //        toLocalDate();
 //        toLocalTime();
+    }
+    private static UserMealWithExceed createUserMealWithExceed(UserMeal userMeal, boolean exceed){
+        return new UserMealWithExceed(userMeal.getDateTime(),userMeal.getDescription(),userMeal.getCalories(),exceed);
     }
 
     public static Stream<UserMealWithExceed> getFilteredMilsWithExceed(Stream<UserMeal>mealList){
