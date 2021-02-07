@@ -2,17 +2,17 @@ package ru.javawebinar.topjava.model;
 
 import java.time.LocalDateTime;
 
-public class UserMealWithExceed {
-    protected final LocalDateTime dateTime;
-    protected final String description;
-    protected final int calories;
-    protected final boolean exceed;
+public class Meal {
+    private final LocalDateTime dateTime;
 
-    public UserMealWithExceed(LocalDateTime dateTime, String description, int calories, boolean exceed) {
+    private final String description;
+
+    private final int calories;
+
+    public Meal(LocalDateTime dateTime, String description, int calories) {
         this.dateTime = dateTime;
         this.description = description;
         this.calories = calories;
-        this.exceed = exceed;
     }
 
     public LocalDateTime getDateTime() {
@@ -25,9 +25,5 @@ public class UserMealWithExceed {
 
     public int getCalories() {
         return calories;
-    }
-
-    public boolean isExceed() {
-        return exceed;
     }
 }
